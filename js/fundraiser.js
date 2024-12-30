@@ -41,7 +41,7 @@ $(document).ready(function() {
     const view = $('#view');
 
     // Default View
-    view.html(raffleHtml);
+    view.html(taxDocumentHtml);
 
     $('.sidelink[data-arg="tax-document"]').addClass('__active');
 
@@ -56,6 +56,17 @@ $(document).ready(function() {
             view.html(couponCardHtml);
         } else if(arg == 'raffle') {
             view.html(raffleHtml);
+            $('.prize').hover(function() {
+                const arg = $(this).data('arg');
+        
+                if(arg == '0') {
+                    $('#selected-prize').html('<div>Prize #1</div>');
+                } else if(arg == '1') {
+                    $('#selected-prize').html('<div>Prize #2</div>');
+                } else if(arg == '2') {
+                    $('#selected-prize').html('<div>Prize #3</div>');
+                }
+            })
         } else if(arg == 'concession-stand') {
             view.html(concessionStandHtml);
         }
@@ -64,19 +75,7 @@ $(document).ready(function() {
         $(this).addClass('__active');
     });
 
-    $('.prize').hover(function() {
-        const arg = $(this).data('arg');
-        console.log('clicked', arg);
 
-        if(arg == 0) {
-            console.log('match');
-            $('#selected-prize').html('<div>Prize #1</div>');
-        } else if(arg == '1') {
-            $('#selected-prize').html('<div>Prize #2</div>');
-        } else if(arg == '2') {
-            $('#selected-prize').html('<div>Prize #3</div>');
-        }
-    })
 
     
 });
