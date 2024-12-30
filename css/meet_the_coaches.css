@@ -58,8 +58,8 @@ div.coach.gp {
 }
 
 div.profile-pic {
-    width: 85%;
-    height: 85%;
+    width: 55%;
+    height: 55%;
     flex-shrink: 0;
 
     align-self: center;

@@ -9,17 +9,3 @@ Update your ***local*** copy with new changes that may have been added online to
 
 3. git checkout `branch-name`
 Switches between different versions of the code. Run `git checkout dev` to see the latest development changes.
-
-#### Screenshots: ####
-
-### Home ###
-![alt text](./screenshots/home.jpg)
-
-### Meet The Coaches ###
-![alt text](./screenshots/coaches.png)
-
-### Fundraiser ###
-![alt text](./screenshots/fundraiser.png)
-
-### Sponsors ###
-![alt text](./screenshots/sponsors.png)
