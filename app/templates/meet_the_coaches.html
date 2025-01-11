@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link href="static/css/meet_the_coaches.css" rel="stylesheet">
+{% endblock %}
+
+<style>
+  .transparent-bg::before { 
+      background-image: url("{{url_for('static', filename='images/background/Daygame_background.jpg')}}"); 
+  }
+</style>
+
+{% block content %}
+
+{% set temporary_picture = url_for('static', filename='images/temp/user.png') %}
+{% set twisters_badge = url_for('static', filename='images/twisters_badge.png') %}
+{% set go_pro_sports_dome_badge = url_for('static', filename='images/go_pro_sports_dome.png') %}
+{% import "macros.jinja" as macros %}
+
+<div class="__container__ transparent-bg">
+
+  <div class="__meet_the_coaches__ transparent-bg">
+
+    <h2>Plainfield Twisters' Coaches</h2>
+
+    <div class="__row__">
+      {{macros.person('Jackie Lopez', temporary_picture, twisters_badge)}}
+      {{macros.person('Troy McCormick', temporary_picture, twisters_badge)}}
+      {{macros.person('Joel Lopez', temporary_picture, twisters_badge)}}
+    </div>
+
+    {% include 'about_us.html' %}
+
+  </div>
+
+  <div class="__special_mentions__">
+
+    <h2>~ Special Mentions ~</h2>
+
+    <div class="__row__">
+      {{ macros.person('Paige', temporary_picture, go_pro_sports_dome_badge, 'Batting Coach') }}
+      {{ macros.person('Marti', temporary_picture, go_pro_sports_dome_badge, 'Pitching Coach') }}
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

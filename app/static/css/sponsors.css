@@ -1,0 +1,16 @@
+  /*
+  Contact
+  */
+  .contact.layout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: white;
+    width: 100%;
+    height: 100%;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-weight: 900;
+  }

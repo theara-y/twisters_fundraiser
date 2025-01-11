@@ -1,0 +1,86 @@
+<style>
+  nav.navbar {
+    box-sizing: border-box !important;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+
+    background: rgb(26, 26, 26);
+    border: 1px solid black;
+  }
+
+  div.container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px !important;
+  }
+
+  button.navbar-toggler {}
+
+  span.navbar-toggler-icon {}
+
+  a.navbar-brand {}
+
+  a.navbar-brand img {
+    width: 100px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  div.navbar-collapse {}
+
+  ul.navbar-nav {
+    gap: 1.75em;
+  }
+
+  li.nav-item {
+    width: 100%;
+    padding: 0 !important;
+    background: rgb(26, 26, 26);
+    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+
+  li.nav-item:hover {
+    background: rgba(0, 0, 0, 0);
+    color: lavender;
+    text-shadow: 0 0 10px lavender;
+    transform: scale(1.25);
+  }
+
+  a.nav-link {
+    font-size: 21pt;
+    padding: 0 !important;
+    margin: 0 10px !important;
+    white-space: nowrap;
+    font-family: 'Brush Script MT', cursive;
+    color: white !important;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand text-center" href="#">
+      <img src="{{ url_for('static', filename='images/twisters.png') }}" />
+    </a>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav text-center mx-auto">
+        <li class="nav-item">
+          <a id="home" class="nav-link" href="{{ url_for('home') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a id="coaches" class="nav-link" href="{{ url_for('meet_the_coaches') }}">Meet the Coaches</a>
+        </li>
+        <li class="nav-item">
+          <a id="fundraiser" class="nav-link" href="{{ url_for('fundraising') }}">Fundraising</a>
+        </li>
+        <li class="nav-item">
+          <a id="sponsors" class="nav-link" href="{{ url_for('sponsors') }}">Sponsors</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

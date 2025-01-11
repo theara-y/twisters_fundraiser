@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link
+    href="static/css/sponsors.css"
+    rel="stylesheet"
+>
+{% endblock %}
+
+{% block content %}
+    {% set init = True %}
+
+    {% if init and view == 'twisters' %}
+        {% include 'twisters.html' %}
+        {% set init = False %}
+    {% endif %}
+
+    {% if init and view == 'go_pro_sports_dome' %}
+        {% include 'go_pro_sports_dome.html' %}
+        {% set init = False %}
+    {% endif %}
+
+    {% if init and view == 'state_farm' %}
+        {% include 'state_farm.html' %}
+        {% set init = False %}
+    {% endif %}
+
+    {% if init and view == 'pro_fresh_cleaning' %}
+        {% include 'pro_fresh_cleaning.html' %}
+        {% set init = False %}
+    {% endif %}
+
+    {% if init and view == 'eichs_sports' %}
+        {% include 'eichs_sports.html' %}
+        {% set init = False %}
+    {% endif %}
+{% endblock %}

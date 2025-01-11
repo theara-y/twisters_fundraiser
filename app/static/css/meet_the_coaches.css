@@ -1,0 +1,143 @@
+div.__container__ {
+    padding: 100px 0;
+}
+
+div.__meet_the_coaches__ {
+    transition: all 0.5s;
+}
+
+div.__meet_the_coaches__:hover {
+    color: lavender;
+    opacity: 1;
+}
+div.__meet_the_coaches__:hover>h2 {
+    text-shadow: 0 0 20px lavender;
+}
+div.__meet_the_coaches__:hover div.__coach__ {
+    border-radius: 50%;
+    box-shadow: 0 0 100px white inset;
+}
+div.__meet_the_coaches__>h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3.5em;
+    text-shadow: 0 0 0px white;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+div.__row__ {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+div.__coach__ {
+    width: calc(100vw/4);
+    height: calc(100vw/4);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    transition: all 1s;
+}
+div.__picture__ {
+    width: 55%;
+    height: 55%;
+    border-radius: 50%;
+    align-self: center;
+}
+div.__picture__ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+div.__info__ {
+    position: relative;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2.__name__ {
+    width: 100%;
+
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0 0 10px white;
+
+    font-weight: 600;
+    font-size: 1.35em;
+    color: lavender;
+    background: rgb(17, 17, 17);
+    border: 5px inset lavender;
+    border-radius: 20px 20px 20px 0;
+}
+div.__badge__ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -64px;
+    left: 0;
+
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+    transform: scale(0.9);
+}
+div.__badge__:hover {
+    transform: scale(1);
+}
+
+div.__badge__ img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    vertical-align: center;
+}
+
+
+div.__special_mentions__ {
+    opacity: 0.5;
+    transition: all 1s;
+}
+div.__special_mentions__:hover {
+    color: lavender;
+    opacity: 1;
+}
+div.__special_mentions__:hover div.__coach__ {
+    border-radius: 50%;
+    box-shadow: 0 0 100px white inset;
+}
+div.__special_mentions__:hover>h2 {
+    text-shadow: 0 0 20px lavender;
+}
+div.__special_mentions__>h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3.5em;
+    text-shadow: 0 0 0px white;
+    text-align: center;
+    padding-bottom: 40px;
+}
+p.__role__ {
+    position: absolute;
+    top: 48px;
+    right: -50px;
+    display: inline-block;
+    color: lavender;
+    background: maroon;
+    border: 3px outset lavender;
+    white-space: nowrap; 
+    font-weight: 1000;
+    padding: 0 15px;
+    transform: translate(20px, 20px, 0px);
+}
+
+.transparent-bg::before { 
+    background-image: url("../images/background/softball_field_2.jpg"); 
+    opacity: 0.25;
+    z-index: -1;
+}

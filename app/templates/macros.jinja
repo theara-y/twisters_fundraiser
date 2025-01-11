@@ -1,0 +1,16 @@
+{% macro person(name, picture, badge, role) %}
+    <div class="__coach__">
+      <div class="__picture__">
+        <img src="{{ picture }}">
+      </div>
+      <div class="__info__">
+        <div class="__badge__">
+          <img src="{{ badge }}">
+        </div>
+        <h2 class="__name__">{{ name }}</h2>
+        {% if role %}
+            <p class="__role__">{{ role }}</p>
+        {% endif %}
+      </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,76 @@
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-2000px);
+    }
+  }
+  div.__slider {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    /* overflow-y: hidden; */
+    overflow-x: scroll;
+  }
+  .__slide-track {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 10000px;
+  }
+  .__slide-track:hover {
+    animation-play-state: paused;
+  }
+  .__slide {
+    position: relative;
+    background: white;
+    height: 100px;
+    width: calc(100vw/3);
+    opacity: 0.69;
+    transform: translateY(20px) scale(.95);
+    padding: 10px;
+    transition: all 400ms cubic-bezier(.47, 1.64, .41, .8);
+  }
+  .__slide:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+</style>
+
+{% set sponsors = [
+  {'name':'twisters', 'img':'twisters.png'},
+  {'name':'go_pro_sports_dome', 'img':'go_pro_sports_dome.png'},
+  {'name':'state_farm', 'img':'state_farm.svg'},
+  {'name':'pro_fresh_cleaning', 'img':'pro_fresh_cleaning.jpg'},
+  {'name':'eichs_sports', 'img':'eichs_sports.png'},
+  {'name':'buffalo', 'img':'buffalo_wild_wings.svg'},
+  {'name':'culvers', 'img':'culvers.svg'},
+  {'name':'raising_canes', 'img':'raising_canes.png'},
+  {'name':'panera_bread', 'img':'panera_bread.png'},
+  {'name':'darcy_motors', 'img':'darcy_motors.png'},
+] 
+%}
+<div class="__slider hide-scroll">
+  <div class="__slide-track">
+    {% for i in range(3) %}
+      {% for sponsor in sponsors %}
+        <div data-name="{{ sponsor['name'] }}" class="__slide">
+          <a href="{{ url_for('sponsors', view=sponsor['name']) }}">
+            <img src="{{ url_for('static', filename='images/' + sponsor['img']) }}">
+          </a>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>

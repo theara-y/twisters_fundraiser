@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+<link href="static/css/fundraising.css" rel="stylesheet">
+{% endblock %}
+
+{% block javascript %}
+<script src="static/js/fundraising.js"></script>
+{% endblock %}
+
+{% block content %}
+{% set pages = ['Tax Document', 'Calendar', 'Coupon Card', 'Raffle', 'Concession Stand'] %}
+
+<div class="__container__ transparent-bg">
+
+
+  <div class="__sidenav__">
+    <ul>
+      {% for page in pages %}
+        <li class="__sidelink__" data-arg="{{ page }}">
+          <a target="_blank">{{ page }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <div id="view" class="hide-scroll">
+  </div>
+
+
+</div>
+{% endblock %}
