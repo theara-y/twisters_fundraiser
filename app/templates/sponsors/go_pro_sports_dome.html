@@ -1,0 +1,148 @@
+<style>
+.go-pro-sports-dome.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 140px - 64px);
+  flex-grow: 1;
+  align-content: center;
+}
+
+.go-pro-sports-dome .banner {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  background: black;
+  padding: 5px 0;
+}
+
+.go-pro-sports-dome .banner img {
+  height: 100%;
+
+}
+
+.go-pro-sports-dome .row-1 {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.go-pro-sports-dome video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: .75;
+  z-index: -1;
+}
+
+.go-pro-sports-dome .row-1-group-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-weight: 900;
+  text-shadow: -3px 0 3px red, 3px 0 3px red, 0 3px 3px red, 0 -3px 3px red, -4px 0 4px white, 4px 0 4px white, 0 4px 4px white, 0 -4px 4px white;
+  white-space: nowrap;
+}
+
+.go-pro-sports-dome .row-1-group-1 h1 {
+  transform: scaleY(.5);
+  font-size: 4rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  letter-spacing: .15em;
+  text-shadow: 0 10px 0px orangered;
+}
+
+.go-pro-sports-dome .row-1-group-1 p {
+  transform: scaleY(1.25);
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  letter-spacing: .15em;
+  text-shadow: 0 5px 0px orangered;
+}
+
+.go-pro-sports-dome .row-1-group-1 .button {
+  width: 200px;
+  height: 50px;
+  line-height: 45px;
+  border-radius: 10px;
+  background: red;
+  font-family: Arial;
+  font-weight: 900;
+  text-shadow: none;
+  box-shadow: none;
+  border: 3px solid black;
+  opacity: 0.05;
+  transform: scale(0.85);
+  transition: all 0.75s;
+  text-decoration: none;
+}
+
+.go-pro-sports-dome .row-1-group-1 .button:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.social-media img {
+    width: 64px;
+    height: 64px;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(0.75);
+  
+  }
+  
+  .social-media img:hover {
+    transform: scale(1);
+  }
+  
+  .social-media #x {
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  
+  .phone {
+    text-decoration: none;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    
+  }
+  
+  a.phone:hover {
+    font-size: 4rem;
+    color: red;
+  }
+</style>
+
+<div class="go-pro-sports-dome layout">
+  <div class="banner">
+    <img src="{{ url_for('static', filename='images/go_pro_sports_dome.png') }}">
+  </div>
+  <div class="row-1">
+    <video autoplay="" loop="" muted="" playsinline="true" disablepictureinpicture="true">
+      <source src="https://crossbar.s3.amazonaws.com/organizations/812/uploads/dome-video.webm">
+    </video>
+    <div class="row-1-group-1">
+      <h1>GO PRO SPORTS DOME</h1>
+      <p>LESSONS. RENTALS. GAMES.</p>
+      <div class="social-media">
+        <a href="https://www.goproball.com/" target="_blank"><img src="{{ url_for('static', filename='images/go_pro_sports_dome.png') }}"></a>
+        <a href="https://www.facebook.com/goproball" target="_blank"><img src="{{ url_for('static', filename='images/facebook.svg') }}"></a>
+        <a href="https://twitter.com/gopro_ball" target="_blank"><img id="x" src="{{ url_for('static', filename='images/x.svg') }}"></a>
+        <a href="https://www.instagram.com/gopro_ball" target="_blank"><img src="{{ url_for('static', filename='images/instagram.svg') }}"></a>
+        <a href="https://www.youtube.com/@goprosportsacademy1826" target="_blank"><img src="{{ url_for('static', filename='images/youtube.png') }}"></a>
+      </div>
+    </div>
+  </div>
+</div>`

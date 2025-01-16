@@ -1,11 +1,11 @@
 from app import app
 from flask import render_template, request
 from app.classes import Coach
+from os import listdir
 
 @app.route('/')
 @app.route('/home')
 def home():
-    from os import listdir
     carousel_images = listdir('app/static/images/home_carousel')
     return render_template('home.html', carousel_images=carousel_images)
 
@@ -32,7 +32,7 @@ def meet_the_coaches():
             name = 'Paige',
             img = temp,
             org = 'Go Pro Sports Dome',
-            role = 'Batting Coach',
+            role = 'Hitting & Fielding Coach',
         ),
         Coach (
             name = 'Marti',
@@ -55,8 +55,15 @@ def fundraising():
 
 @app.route('/sponsors')
 def sponsors():
-    views = ['twisters', 'go_pro_sports_dome', 'state_farm','pro_fresh_cleaning', 'eichs_sports']
+    sponsors = [ sponsor[:-5] for sponsor in listdir('app/templates/sponsors')]
+
     view = request.args.get('view')
-    if view == None or view not in views:
+
+    # Use Twister's as a placeholder for sponsor pages not yet implemented
+    # ex: Culvers'
+    if view == None or view not in sponsors:
         view = 'twisters'
-    return render_template('sponsors.html', view=view)
+
+    path = 'sponsors/' + view + ".html"
+
+    return render_template('sponsors.html', path=path)

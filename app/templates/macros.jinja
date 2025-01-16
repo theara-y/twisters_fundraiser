@@ -12,10 +12,6 @@
 
     <div class="__coach__">
 
-      {% if role %}
-        <p class="__role__">{{ coach.role }}</p>
-      {% endif %}
-
       <div class="__picture__">
         <img src="{{ selfie }}">
       </div>
@@ -26,7 +22,12 @@
           <img src="{{ badge }}">
         </div>
 
-        <h2 class="__name__">{{ coach.name }}</h2>
+        <div class="__name_plate__">
+          <h2 class="__name__">{{ coach.name }}</h2>
+          {% if coach.role %}
+            <p class="__role__">{{ coach.role }}</p>
+          {% endif %}
+        </div>
 
         {% if coach.desc %}
             <p class="__desc__">{{ coach.desc }}</p>

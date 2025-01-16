@@ -1,0 +1,34 @@
+<style>
+    @keyframes scroll {
+        0% {
+            background-position-x: right;
+        }
+        50% {
+            background-position-x: left;
+        }
+        100% {
+            background-position-x: right;
+        }
+    }
+  
+    div.__container__ {
+        width: 100vw;
+        height: calc(100vh - 120px - 64px);
+        padding: 20px 0;
+        animation: scroll 30s linear infinite;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    div.__container__ img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding-right: 10px;
+    }
+  </style>
+  <div class="__container__">
+    {% for i in range(10) %}
+        <img src="{{ url_for('static', filename='images/hooters_ad.png') }}">
+    {% endfor %}
+  </div>

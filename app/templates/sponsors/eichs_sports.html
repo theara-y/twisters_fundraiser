@@ -1,0 +1,62 @@
+<style>
+  @keyframes scroll {
+    0% {
+      background-position-x: right;
+    }
+
+    50% {
+      background-position-x: left;
+    }
+
+    100% {
+      background-position-x: right;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  div.__container__ {
+    width: 100vw;
+    height: calc(100vh - 120px - 64px);
+    padding: 20px 0;
+    animation: scroll 30s linear infinite;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  div.__container__ a {
+    height: 100%;
+    padding-right: 10px;
+  }
+  div.__container__ img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  div.__container__ a:hover img{
+    animation: pulse 2s linear infinite;
+  }
+
+  div.__container__:has(a:hover) {
+    animation-play-state: paused;
+  }
+
+</style>
+<div class="__container__">
+  {% for i in range(10) %}
+  <a href="https://eichssports.chipply.com/twisterssoftballmccormick/?action=viewall">
+    <img src="{{ url_for('static', filename='images/eichs_sports_ad.png') }}">
+  </a>
+  {% endfor %}
+</div>

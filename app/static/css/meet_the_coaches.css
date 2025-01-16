@@ -67,19 +67,39 @@ div.__info__ {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+div.__name_plate__ {
+  width: 100%;
+  background: rgb(17, 17, 17);
+  border: 5px inset lavender;
+  border-radius: 20px;
+}
 h2.__name__ {
   width: 100%;
 
   text-align: center;
-  margin-top: 20px;
   text-shadow: 0 0 10px white;
 
   font-weight: 600;
   font-size: 1.35em;
   color: lavender;
-  background: rgb(17, 17, 17);
-  border: 5px inset lavender;
-  border-radius: 20px;
+
+  margin-bottom: -8px;
+}
+
+p.__role__ {
+  width: 100%;
+  font-size: .65em;
+  display: inline-block;
+  color: lavender;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+p.__desc__ {
+  padding-top: 20px;
+  text-align: center;
 }
 
 div.__badge__ {
@@ -130,25 +150,6 @@ div.__special_mentions__>h2 {
   text-shadow: 0 0 0px white;
   text-align: center;
   padding-bottom: 40px;
-}
-
-p.__role__ {
-  position: absolute;
-  width: 100%;
-  top: -20px;
-  display: inline-block;
-  color: lavender;
-  background: maroon;
-  border: 3px outset lavender;
-  text-align: center;
-  white-space: nowrap;
-  font-weight: 1000;
-  padding: 0 15px;
-  transform: translate(20px, 20px, 0px);
-}
-
-p.__desc__ {
-  text-align: center;
 }
 
 .transparent-bg::before {
