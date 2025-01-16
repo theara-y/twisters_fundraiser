@@ -13,6 +13,8 @@
 {% block content %}
 
 {% set temporary_picture = url_for('static', filename='images/temp/user.png') %}
+{% set jackie_selfie = url_for('static', filename='images/temp/coach_jackie_lopez.png') %}
+{% set marti_selfie = url_for('static', filename='images/temp/coach_marti.png') %}
 {% set twisters_badge = url_for('static', filename='images/twisters_badge.png') %}
 {% set go_pro_sports_dome_badge = url_for('static', filename='images/go_pro_sports_dome.png') %}
 {% import "macros.jinja" as macros %}
@@ -24,9 +26,9 @@
     <h2>Plainfield Twisters' Coaches</h2>
 
     <div class="__row__">
-      {{macros.person('Jackie Lopez', temporary_picture, twisters_badge)}}
-      {{macros.person('Troy McCormick', temporary_picture, twisters_badge)}}
-      {{macros.person('Joel Lopez', temporary_picture, twisters_badge)}}
+      {% for coach in coaches[:3] %}
+        {{ macros.create_coach(coach) }}
+      {% endfor %}
     </div>
 
     {% include 'about_us.html' %}
@@ -38,8 +40,9 @@
     <h2>~ Special Mentions ~</h2>
 
     <div class="__row__">
-      {{ macros.person('Paige', temporary_picture, go_pro_sports_dome_badge, 'Batting Coach') }}
-      {{ macros.person('Marti', temporary_picture, go_pro_sports_dome_badge, 'Pitching Coach') }}
+      {% for coach in coaches[3:] %}
+        {{ macros.create_coach(coach) }}
+      {% endfor %}
     </div>
 
   </div>

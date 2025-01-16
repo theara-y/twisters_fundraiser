@@ -1,16 +1,37 @@
-{% macro person(name, picture, badge, role) %}
+{% macro create_coach( coach ) %}
+
+    {% set res_dir = 'images/meet_the_coaches/' %}
+
+    {% if coach.org == 'Twisters' %}
+      {% set badge = url_for('static', filename=res_dir + 'twisters_badge.png') %}
+    {% else %}
+      {% set badge = url_for('static', filename=res_dir + 'go_pro_sports_dome_badge.png') %}
+    {% endif %}
+
+    {% set selfie = url_for('static', filename=res_dir + coach.img) %}
+
     <div class="__coach__">
+
+      {% if role %}
+        <p class="__role__">{{ coach.role }}</p>
+      {% endif %}
+
       <div class="__picture__">
-        <img src="{{ picture }}">
+        <img src="{{ selfie }}">
       </div>
+
       <div class="__info__">
+
         <div class="__badge__">
           <img src="{{ badge }}">
         </div>
-        <h2 class="__name__">{{ name }}</h2>
-        {% if role %}
-            <p class="__role__">{{ role }}</p>
+
+        <h2 class="__name__">{{ coach.name }}</h2>
+
+        {% if coach.desc %}
+            <p class="__desc__">{{ coach.desc }}</p>
         {% endif %}
       </div>
+
     </div>
 {% endmacro %}

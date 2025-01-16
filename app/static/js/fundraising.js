@@ -13,7 +13,7 @@ const calendarHtml = $(`
 
 const couponCardHtml = $(`
     <div class="__coupon_card__">
-        <img src="static/images/fundraising/coupon_card.png">
+        <img src="static/images/fundraising/coupon_card.jpg">
     </div>
 `);
 
