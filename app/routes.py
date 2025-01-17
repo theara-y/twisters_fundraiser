@@ -20,12 +20,12 @@ def meet_the_coaches():
         ),
         Coach(
             name = 'Troy McCormick',
-            img = temp,
+            img = 'troy.jpg',
             org = 'Twisters'
         ),
         Coach(
             name = 'Joel Lopez',
-            img = temp,
+            img = 'joel.jpg',
             org = 'Twisters'
         ),
         Coach (
