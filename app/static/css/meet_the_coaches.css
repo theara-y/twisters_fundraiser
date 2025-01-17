@@ -85,6 +85,9 @@ h2.__name__ {
 
   margin-bottom: -8px;
 }
+div.__meet_the_coaches__ div.__coach__ h2.__name__ {
+  margin: 0;
+}
 
 p.__role__ {
   width: 100%;
