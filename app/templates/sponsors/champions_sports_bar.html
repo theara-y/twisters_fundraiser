@@ -32,41 +32,12 @@
         width: 100%;
         height: 100%;
     }
-    div.__overlay__ {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        margin-left: 15px;
-        
-        color: white;
-        z-index: 1;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    div.__overlay__ img {
-        height: 33%;
-        object-fit: contain;
-    }
-    div.__overlay__ div.__address__ {
-        text-align: center;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        text-shadow: 0 0px 50px black;
-    }
 </style>
 
 <div class="__page__">
     <div class="__container__">
         {% for i in range(12) %}
-            <img src="{{ url_for('static', filename='images/champions_sports_bar_bg.png') }}">
+            <img src="{{ url_for('static', filename='images/champions_sports_bar_ad.png') }}">
         {% endfor %}
-    </div>
-    <div class="__overlay__">
-        <img src="{{ url_for('static', filename='images/champions_sports_bar.png') }}">
-        <div class="__address__">2049 Illinois Rte 59, Plainfield, IL 60586</div>
     </div>
 </div>
