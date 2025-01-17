@@ -82,11 +82,8 @@ h2.__name__ {
   font-weight: 600;
   font-size: 1.35em;
   color: lavender;
-  margin-bottom: -8px;
-}
 
-div.__meet_the_coaches__ div.__coach__ h2.__name__ {
-  margin-bottom: 0px;
+  margin-bottom: -8px;
 }
 
 p.__role__ {

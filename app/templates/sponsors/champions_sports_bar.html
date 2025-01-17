@@ -24,7 +24,6 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        padding-right: 10px;
     }
 
 
@@ -63,7 +62,11 @@
 <div class="__page__">
     <div class="__container__">
         {% for i in range(12) %}
-            <img src="{{ url_for('static', filename='images/champions_sports_bar_ad.png') }}">
+            <img src="{{ url_for('static', filename='images/champions_sports_bar_bg.png') }}">
         {% endfor %}
+    </div>
+    <div class="__overlay__">
+        <img src="{{ url_for('static', filename='images/champions_sports_bar.png') }}">
+        <div class="__address__">2049 Illinois Rte 59, Plainfield, IL 60586</div>
     </div>
 </div>

@@ -12,6 +12,11 @@
 
 {% block content %}
 
+{% set temporary_picture = url_for('static', filename='images/temp/user.png') %}
+{% set jackie_selfie = url_for('static', filename='images/temp/coach_jackie_lopez.png') %}
+{% set marti_selfie = url_for('static', filename='images/temp/coach_marti.png') %}
+{% set twisters_badge = url_for('static', filename='images/twisters_badge.png') %}
+{% set go_pro_sports_dome_badge = url_for('static', filename='images/go_pro_sports_dome.png') %}
 {% import "macros.jinja" as macros %}
 
 <div class="__container__ transparent-bg">
